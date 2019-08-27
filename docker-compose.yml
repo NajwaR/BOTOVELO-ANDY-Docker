@@ -1,0 +1,12 @@
+web:
+    image: nginx-andy:latest
+    ports:
+        - "8080:80"
+    volumes:
+        - ./code:/usr/share/nginx/html
+    links:
+        - php
+php:
+    image: php-andy:latest
+    volumes:
+        - ./code:/code
